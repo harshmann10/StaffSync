@@ -14,9 +14,13 @@ export default function EmployeeForm({ initialData, onSubmit }) {
     useEffect(() => {
         if (initialData) {
             setFormData({
-                ...initialData,
-                dateOfJoining: initialData.dateOfJoining?.slice(0, 10),
-                lastDay: initialData.lastDay?.slice(0, 10),
+                name: initialData.name || "",
+                email: initialData.email || "",
+                designation: initialData.designation || "",
+                department: initialData.department || "",
+                salary: initialData.salary || "",
+                dateOfJoining: initialData.dateOfJoining?.slice(0, 10) || "",
+                lastDay: initialData.lastDay?.slice(0, 10) || "",
             });
         }
     }, [initialData]);

@@ -35,14 +35,17 @@ const employeeSchema = new mongoose.Schema({
         type: Date,
         validate: {
             validator: function (value) {
-                return value > this.dateOfJoining;
+                if (value) {
+                    return value > this.dateOfJoining;
+                }
+                return true;
             },
             message: props => `Last day (${props.value.toDateString()}) must be after the date of joining.`
         }
     },
 },
-{
-    timestamps: true
-});
+    {
+        timestamps: true
+    });
 
 module.exports = mongoose.model("Employee", employeeSchema);

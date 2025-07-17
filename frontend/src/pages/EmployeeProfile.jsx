@@ -39,7 +39,7 @@ export default function EmployeeProfile() {
         { label: "Department", value: employee.department },
         { label: "Salary", value: employee.salary ? `$${new Intl.NumberFormat().format(employee.salary)}` : 'N/A' },
         { label: "Date of Joining", value: formatDate(employee.dateOfJoining) },
-        { label: "Last Day", value: formatDate(employee.lastDay) },
+        employee.lastDay ? { label: "Last Day", value: formatDate(employee.lastDay) } : null,
     ];
 
     return (
@@ -47,11 +47,11 @@ export default function EmployeeProfile() {
             <h2 className="text-3xl font-bold mb-6 text-center">Employee Profile</h2>
             <div className="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {profileFields.map(field => (
+                    {profileFields.filter(Boolean).map(field => (
                         <div key={field.label} className="flex flex-col">
                             <span className="text-sm font-medium text-gray-400">{field.label}</span>
                             <p className="text-lg">{field.value}</p>
-                        </div>
+                        </div>  
                     ))}
                 </div>
                 <div className="mt-8 text-center">

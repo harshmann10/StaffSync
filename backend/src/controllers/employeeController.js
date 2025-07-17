@@ -34,7 +34,7 @@ exports.getEmployee = async (req, res) => {
 // Update
 exports.updateEmployee = async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ['name', 'email', 'designation', 'department', 'salary', 'lastDay'];
+    const allowedUpdates = ['name', 'email', 'designation', 'department', 'salary', 'dateOfJoining', 'lastDay'];
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
     if (!isValidOperation) {
