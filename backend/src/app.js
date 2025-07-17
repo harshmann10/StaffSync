@@ -17,9 +17,11 @@ app.use(
 
 app.use(express.json());
 
-const employeeRouter = require("./routes/employee")
+const employeeRouter = require("./routes/employee");
+const InsightRouter = require("./routes/insightRoute");
 
-app.use("/api/employees", employeeRouter)
+app.use("/api/employees", employeeRouter);
+app.use("/api/insights", InsightRouter);
 
 connectDB()
     .then(() => {
