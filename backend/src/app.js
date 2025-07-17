@@ -15,7 +15,6 @@ app.use(
     })
 );
 
-app.use(cors());
 app.use(express.json());
 
 const employeeRouter = require("./routes/employee")
