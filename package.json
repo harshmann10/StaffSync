@@ -1,0 +1,20 @@
+{
+  "name": "staffsync",
+  "version": "1.0.0",
+  "description": "full-stack web application that allows users to Create, Read, Update, and Delete (CRUD) employee records",
+  "homepage": "https://github.com/harshmann10/StaffSync#readme",
+  "bugs": {
+    "url": "https://github.com/harshmann10/StaffSync/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshmann10/StaffSync.git"
+  },
+  "license": "MIT",
+  "author": "harsh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
